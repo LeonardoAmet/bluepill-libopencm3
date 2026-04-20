@@ -1,6 +1,8 @@
 # bluepill-libopencm3
 
-Este repositorio contiene ejemplos para la placa STM32F103C8T6 (conocida como "Blue Pill") usando la biblioteca [libopencm3](https://github.com/libopencm3/libopencm3). Está pensado como material de apoyo para la materia **Sistemas Embebidos** (UADE).
+Este repositorio contiene ejemplos para la placa STM32F103C8T6 (conocida como "Blue Pill") usando la biblioteca [libopencm3](https://github.com/libopencm3/libopencm3). Está pensado como material de apoyo para la materia **Sistemas Embebidos** (UADE) y cubre el recorrido **bare-metal** del curso: GPIO, UART, timers, interrupciones externas y antirrebote.
+
+Este repo no incluye ejemplos con sistema operativo. Los laboratorios con RTOS viven en el repositorio hermano `bluepill-freertos`.
 
 ---
 
@@ -53,6 +55,11 @@ make flash
 - `common/` → Archivos compartidos como el `linker.ld`
 - `libopencm3/` → Submódulo con la biblioteca original
 
+El split pedagógico entre repositorios queda así:
+
+- `bluepill-libopencm3` → recorrido bare-metal con libopencm3
+- `bluepill-freertos` → continuación con multitarea y sincronización usando FreeRTOS
+
 Cada lab tiene su propio `Makefile`, pero todos comparten:
 
 - `linker.ld` hecho a medida para STM32F103C8T6
@@ -79,6 +86,7 @@ Este repo está en construcción. Vas a encontrar ejemplos guiados que siguen la
 
 Si tenés dudas, revisá:
 - El repo de la cátedra: [https://github.com/LeonardoAmet/bluepill-cmsis-drivers](https://github.com/LeonardoAmet/bluepill-cmsis-drivers)
+- El repo de FreeRTOS: [https://github.com/LeonardoAmet/bluepill-freertos](https://github.com/LeonardoAmet/bluepill-freertos)
 - Esta guía paso a paso
 - Los apuntes de clase
 
@@ -89,7 +97,6 @@ Si tenés dudas, revisá:
 - Enciende y apaga el LED de PC13
 - Usa funciones de `libopencm3` para habilitar GPIOC, configurar el pin y hacer toggle
 - No usa delays de HAL: todo es bajo nivel y controlado por vos
-
 
 
 
